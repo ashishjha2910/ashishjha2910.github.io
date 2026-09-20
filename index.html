@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ashish Kumar | Network &amp; Cloud Automation</title>
+<meta name="description" content="Ashish Kumar builds Python automation for CDN, DNS and certificate operations at scale. Computer Science graduate with a Java and Spring Boot backend foundation.">
+<meta property="og:title" content="Ashish Kumar | Network &amp; Cloud Automation">
+<meta property="og:description" content="Python automation for CDN, DNS and certificate operations at scale.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1626'/%3E%3Ctext x='32' y='42' font-family='Arial' font-size='28' font-weight='700' text-anchor='middle' fill='%233DD6C3'%3EAK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B1626;
+    --surface: #11223A;
+    --line: #26405F;
+    --text: #E6EDF7;
+    --muted: #A3B4CC;
+    --accent: #3DD6C3;
+    --on-accent: #06121F;
+    --term-bg: #08111F;
+    --term-text: #CFE3F5;
+    --term-key: #7E93B2;
+    --term-accent: #3DD6C3;
+
+    --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #F4F7FA;
+      --surface: #FFFFFF;
+      --line: #CFDBE8;
+      --text: #0E1E36;
+      --muted: #4A5E79;
+      --accent: #0A7A6E;
+      --on-accent: #FFFFFF;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; display: block; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  .skip-link {
+    position: absolute; left: 1rem; top: -4rem;
+    background: var(--accent); color: var(--on-accent);
+    padding: .6rem 1rem; border-radius: 6px; z-index: 20;
+  }
+  .skip-link:focus { top: 1rem; }
+
+  .wrap { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 90%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 1.5rem; padding-block: .9rem; flex-wrap: wrap;
+  }
+  .brand {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.15rem;
+    color: var(--text); text-decoration: none;
+  }
+  .site-nav { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  .site-nav a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; }
+  .site-nav a:hover { color: var(--text); text-decoration: underline; text-underline-offset: 6px; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding-block: clamp(3rem, 8vw, 6.5rem) clamp(3rem, 7vw, 5.5rem); }
+  .hero-grid {
+    display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: clamp(2rem, 5vw, 4rem); align-items: center;
+  }
+  .hero h1 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(3rem, 8.5vw, 5.6rem); line-height: .98; letter-spacing: -.03em;
+    margin: 0 0 1.4rem;
+  }
+  .hero .lede {
+    font-size: clamp(1.2rem, 2.4vw, 1.5rem); line-height: 1.4; font-weight: 500;
+    max-width: 30ch; margin: 0 0 1rem;
+  }
+  .hero .sub { color: var(--muted); max-width: 46ch; margin: 0 0 2rem; }
+  .actions { display: flex; gap: .8rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: .7rem 1.2rem; border-radius: 6px;
+    font-weight: 600; font-size: .98rem; text-decoration: none;
+    border: 1.5px solid var(--line); color: var(--text);
+  }
+  .btn:hover { border-color: var(--accent); text-decoration: none; }
+  .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+  .btn-primary:hover { filter: brightness(1.08); }
+
+  /* Terminal: the one memorable element */
+  .terminal {
+    margin: 0; background: var(--term-bg); color: var(--term-text);
+    border: 1px solid #1E3352; border-radius: 10px;
+    font-family: var(--font-mono); font-size: clamp(.82rem, 1.6vw, .95rem); line-height: 1.85;
+    box-shadow: 0 24px 60px -30px rgba(0, 0, 0, .55);
+    overflow: hidden;
+  }
+  .terminal-bar {
+    display: flex; align-items: center; gap: .4rem; padding: .65rem .9rem;
+    background: #0D1A2E; border-bottom: 1px solid #1E3352;
+  }
+  .terminal-bar span { width: 10px; height: 10px; border-radius: 50%; background: #2A4364; }
+  .terminal-body { padding: 1.1rem 1.25rem 1.3rem; overflow-x: auto; }
+  .terminal-line { display: block; white-space: nowrap; }
+  .terminal .prompt { color: var(--term-accent); }
+  .terminal .key { display: inline-block; min-width: 9ch; color: var(--term-key); }
+  .terminal .ok { color: var(--term-accent); font-weight: 500; }
+  .terminal-line { opacity: 0; animation: reveal .01s linear forwards; animation-delay: calc(.35s + var(--i) * .42s); }
+  @keyframes reveal { to { opacity: 1; } }
+
+  /* ---------- Sections ---------- */
+  section { padding-block: clamp(3rem, 7vw, 5rem); scroll-margin-top: 4rem; }
+  .section-head {
+    font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em;
+    font-size: clamp(1.9rem, 4vw, 2.6rem); line-height: 1.1; margin: 0 0 2.2rem;
+  }
+  .split { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: clamp(1.5rem, 5vw, 4rem); }
+  .split > h2 { margin: 0; }
+  .prose p { max-width: 62ch; margin: 0 0 1.1rem; }
+  .prose p:last-child { margin-bottom: 0; }
+
+  /* About */
+  .about { display: flex; gap: 1.6rem; align-items: flex-start; }
+  .avatar {
+    position: relative; flex: none; width: 96px; height: 96px; border-radius: 50%;
+    background: var(--surface); border: 1.5px solid var(--line);
+    display: grid; place-items: center; overflow: hidden;
+    font-family: var(--font-display); font-weight: 700; font-size: 1.9rem; color: var(--accent);
+  }
+  .avatar img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  /* Experience */
+  .role { border-left: 2px solid var(--accent); padding-left: clamp(1.1rem, 3vw, 2rem); }
+  .role h3 { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.2; margin: 0 0 .3rem; letter-spacing: -.01em; }
+  .role .where { margin: 0 0 1.6rem; color: var(--muted); }
+  .role ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+  .role li { max-width: 68ch; position: relative; }
+  .role li strong { font-weight: 600; }
+
+  /* Projects */
+  .project { padding-block: 1.8rem; border-top: 1px solid var(--line); }
+  .project:first-of-type { border-top: 0; padding-top: 0; }
+  .project h3 { font-family: var(--font-display); font-size: 1.35rem; margin: 0 0 .25rem; letter-spacing: -.01em; }
+  .project .stack { margin: 0 0 .9rem; color: var(--muted); font-family: var(--font-mono); font-size: .86rem; }
+  .project p { max-width: 66ch; margin: 0 0 .8rem; }
+  .project p:last-child { margin-bottom: 0; }
+  .project.featured {
+    background: var(--surface); border: 1px solid var(--line); border-left: 3px solid var(--accent);
+    border-radius: 4px 10px 10px 4px; padding: clamp(1.4rem, 3vw, 2.2rem); margin-bottom: 2rem;
+  }
+  .project.featured h3 { font-size: clamp(1.5rem, 3vw, 1.9rem); }
+  .badge {
+    display: inline-block; margin-left: .6rem; padding: .1rem .55rem; vertical-align: middle;
+    border: 1px solid var(--accent); color: var(--accent); border-radius: 999px;
+    font-family: var(--font-body); font-size: .78rem; font-weight: 600; letter-spacing: 0;
+  }
+
+  /* Skills */
+  .skills { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 1.1rem 2rem; margin: 0; }
+  .skills dt { font-weight: 600; }
+  .skills dd { margin: 0; color: var(--muted); max-width: 66ch; }
+  .skills dd b { color: var(--text); font-weight: 500; }
+
+  /* Education */
+  .edu h3 { font-family: var(--font-display); font-size: 1.3rem; margin: 0 0 .25rem; }
+  .edu p { margin: 0; color: var(--muted); }
+  .certs { margin: 2rem 0 0; padding: 0; list-style: none; display: grid; gap: .55rem; max-width: 68ch; }
+  .certs li { padding-left: 1.1rem; position: relative; }
+  .certs li::before { content: ""; position: absolute; left: 0; top: .72em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .sub-head { font-family: var(--font-display); font-size: 1.3rem; margin: 2.4rem 0 0; }
+
+  /* Contact */
+  .contact-links { display: grid; gap: .5rem; margin: 1.6rem 0 0; padding: 0; list-style: none; }
+  .contact-links a { font-weight: 500; }
+  .contact-links span { display: inline-block; min-width: 6.5rem; color: var(--muted); }
+
+  footer { border-top: 1px solid var(--line); padding-block: 1.6rem; color: var(--muted); font-size: .92rem; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .split { grid-template-columns: 1fr; gap: 0; }
+    .split > h2 { margin-bottom: 2rem; }
+    .skills { grid-template-columns: 1fr; gap: .2rem; }
+    .skills dd { margin-bottom: 1rem; }
+  }
+  @media (max-width: 640px) {
+    .site-header { position: static; }
+    .site-header .wrap { gap: .4rem; }
+    .about { flex-direction: column; }
+    .contact-links span { display: block; min-width: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .terminal-line { opacity: 1; animation: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Ashish Kumar</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <div class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Ashish Kumar</h1>
+        <p class="lede">I build Python automation for CDN, DNS and certificate operations at scale.</p>
+        <p class="sub">Computer Science graduate with a Java and Spring Boot backend foundation, now automating a large Akamai environment as an infrastructure intern at Times Internet.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:ashishdss258@gmail.com">Email me</a>
+          <a class="btn" href="https://www.linkedin.com/in/ashish-kumar258" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/ashishjha2910" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+
+      <figure class="terminal" aria-label="Summary of Ashish Kumar's current role and focus">
+        <div class="terminal-bar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <div class="terminal-body">
+          <code class="terminal-line" style="--i:0"><span class="prompt">$</span> whoami --verbose</code>
+          <code class="terminal-line" style="--i:1"><span class="key">role</span>Network &amp; Systems Automation Intern</code>
+          <code class="terminal-line" style="--i:2"><span class="key">company</span>Times Internet, Noida</code>
+          <code class="terminal-line" style="--i:3"><span class="key">focus</span>Akamai CDN, CPS, DNS automation</code>
+          <code class="terminal-line" style="--i:4"><span class="key">stack</span>Python, Java, Spring Boot, MySQL</code>
+          <code class="terminal-line" style="--i:5"><span class="key">seeking</span>Network/Cloud Automation, DevOps, Backend</code>
+          <code class="terminal-line" style="--i:6"><span class="key">status</span><span class="ok">NOERROR</span></code>
+        </div>
+      </figure>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap split">
+      <h2 class="section-head">About</h2>
+      <div class="about">
+        <!-- Optional photo: add a file named photo.jpg next to index.html and it appears here automatically. -->
+        <div class="avatar" aria-hidden="true">AK<img src="photo.jpg" alt="" onerror="this.remove()"></div>
+        <div class="prose">
+          <p>I work where networking meets software. My day-to-day is writing resumable, rate-limited, multi-threaded Python scripts that process tens of thousands of records: resolving DNS, inventorying certificates and CP codes, and reconciling business-unit data against live Akamai APIs.</p>
+          <p>Before that, I built backend systems in Java, Spring Boot, Spring Security and MySQL, and I studied networking fundamentals in depth: DNS, HTTP/HTTPS, TCP/IP, SSL/TLS, CDN and WAF.</p>
+          <p>I'm looking for a Network/Cloud Automation, DevOps or Backend Engineering role.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap split">
+      <h2 class="section-head">Experience</h2>
+      <div class="role">
+        <h3>Network &amp; Systems Automation Intern</h3>
+        <p class="where">System &amp; Network Admin Team, Times Internet Limited, Noida. Aug 2026 to Nov 2026, current.</p>
+        <ul>
+          <li><strong>DNS at scale.</strong> Automated DNS/CNAME resolution for 3,172+ SAN domains from the CPS certificate inventory using Python and dnspython, sorting each into 5 DNS states and validating results against Linux <code>dig</code>.</li>
+          <li><strong>Business Unit mapping.</strong> Built a multi-source pipeline that reconciles CPS inventory, cost-allocation reports and live Akamai API data, raising verified coverage to 82% (2,598 of 3,172 rows) with full source traceability.</li>
+          <li><strong>Reliable extraction.</strong> Rebuilt a fragile legacy Property → Hostname → CP Code script with retry/backoff, checkpointing and resumable runs. It now processes 1,510 properties with zero failures.</li>
+          <li><strong>30-40x faster.</strong> Parallelised a Property → Hostname → Origin mapping script with an 8-worker thread pool across 6 Akamai contracts, capturing all origin rules for 1,873 properties (64,399 rows).</li>
+          <li><strong>Access review.</strong> Audited Akamai user access, removed duplicate records and flagged accounts that needed a security cleanup review.</li>
+          <li><strong>Data quality.</strong> Found and fixed silent bugs in legacy scripts (hardcoded inputs, incomplete rule-tree traversal, ID-format mismatches) and verified each fix against live API and DNS results.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap split">
+      <h2 class="section-head">Projects</h2>
+      <div>
+        <article class="project featured">
+          <h3>Akamai Operations Dashboard <span class="badge">Internship project</span></h3>
+          <p class="stack">Python, Flask, SQLite, Akamai API, HTML/CSS/JS</p>
+          <p>A full-stack internal dashboard that mirrors Akamai Control Center. It brings 8+ live data sections (properties, origins, certificates, users and DNS checks) covering 64,399+ origin rows into one browsable source of truth.</p>
+          <p>The site reads only from a SQLite database, while independent fetcher scripts handle every API call on a cron/systemd schedule. The interface never depends on the API being available.</p>
+        </article>
+
+        <article class="project">
+          <h3>Online Test Management System</h3>
+          <p class="stack">Java, Spring Boot, Spring Security, MySQL</p>
+          <p>A secure online examination platform with role-based authentication, BCrypt password encryption, quiz management, result generation and a REST API backend.</p>
+        </article>
+
+        <article class="project">
+          <h3>Tourism Management System</h3>
+          <p class="stack">Java Swing, MySQL</p>
+          <p>A desktop hotel booking and package management application with SQL-driven CRUD operations and data validation.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap split">
+      <h2 class="section-head">Skills</h2>
+      <dl class="skills">
+        <dt>Languages</dt>
+        <dd>Python, Java, SQL, JavaScript, C++, Bash</dd>
+
+        <dt>Automation and APIs</dt>
+        <dd>Akamai PAPI, CPS and EdgeGrid APIs, REST APIs, pandas, requests, dnspython, openpyxl, multithreading and thread pools, retry-backoff and resumable script design</dd>
+
+        <dt>Networking and security</dt>
+        <dd>DNS (CNAME and A records, dig, NXDOMAIN triage), CDN (Akamai), HTTP/HTTPS, TCP/IP, IP addressing, SSL/TLS, WAF, IAM and access reviews</dd>
+
+        <dt>Backend and databases</dt>
+        <dd>Spring Boot, Spring Security, JDBC, REST APIs, Thymeleaf, MySQL (CRUD, joins, aggregate functions)</dd>
+
+        <dt>Systems</dt>
+        <dd>Linux (Ubuntu), SSH, nohup and process management, WSL, Windows</dd>
+
+        <dt>Tools</dt>
+        <dd>Git, GitHub, Postman, IntelliJ IDEA, VS Code, MySQL Workbench, Excel reporting with openpyxl</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap split">
+      <h2 class="section-head">Education</h2>
+      <div>
+        <div class="edu">
+          <h3>Lakshmi Narain College of Technology Excellence (LNCTE), Bhopal</h3>
+          <p>Bachelor of Technology in Computer Science &amp; Engineering. CGPA 7.58. Aug 2021 to Jun 2025.</p>
+        </div>
+        <h3 class="sub-head">Certifications</h3>
+        <ul class="certs">
+          <li>KodNest Certified, Java Full Stack Development</li>
+          <li>Infosys SpringBoard Certified, Java</li>
+          <li>Basic MongoDB Certified</li>
+          <li>HackerRank Certified, SQL and Problem Solving (Intermediate)</li>
+          <li>Cisco Networking Academy: Cybersecurity Essentials, Cloud Security, Introduction to Cybersecurity</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap split">
+      <h2 class="section-head">Contact</h2>
+      <div class="prose">
+        <p>I'm open to Network/Cloud Automation, DevOps and Backend Engineering roles. Email is the quickest way to reach me.</p>
+        <ul class="contact-links">
+          <li><span>Email</span><a href="mailto:ashishdss258@gmail.com">ashishdss258@gmail.com</a></li>
+          <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/ashish-kumar258" target="_blank" rel="noopener">linkedin.com/in/ashish-kumar258</a></li>
+          <li><span>GitHub</span><a href="https://github.com/ashishjha2910" target="_blank" rel="noopener">github.com/ashishjha2910</a></li>
+          <li><span>Location</span>Noida, India</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Ashish Kumar</div>
+</footer>
+</body>
+</html>
